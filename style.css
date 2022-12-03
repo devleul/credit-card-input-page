@@ -1,0 +1,208 @@
+:root {
+  --light-grayish-violet: hsl(270, 3%, 87%);
+  --dark-grayish-violet: hsl(279, 6%, 55%);
+  --very-dark-violet: hsl(278, 68%, 11%);
+  --red-alert: rgb(192, 110, 110);
+}
+
+html {
+  height: 900px;
+}
+
+body {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+  font-family: 'Space Grotesk', monospace, sans-serif;
+}
+
+/* Hidding second screen and footer */
+#second-screen {
+  display: none;
+}
+
+.attribution {
+  display: none;
+}
+
+#container-lg {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+#colored-bg {
+  height: 100vh;
+  position: relative;
+  width: 483px;
+}
+
+#colored-bg picture {
+  object-fit: cover;
+  height: 0;
+}
+
+/* Card positioning */
+
+#card-front {
+  position: absolute;
+  top: 175px;
+  left: 150px ;
+}
+
+#card-back {
+  position: absolute;
+  top: 465px;
+  left: 250px ;
+}
+
+/* Form positioning and style */
+label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+#form-container {
+  display: flex;
+  justify-content: flex-start;
+  width:  calc(100% - 483px);
+}
+
+form div > div {
+  margin-bottom: 25px;
+}
+
+form {
+  position: relative;
+  left: 180px;
+  top: 270px;
+  width: 400px;
+  margin: 0 0 0 200px;
+  height: 400px;
+}
+
+#form-container input {
+  height: 40px;
+  border: 1px solid var(--light-grayish-violet);
+  border-radius: 7px;
+  margin-top: 5px;
+  padding: 0 10px;
+  font-family: 'Space Grotesk', monospace, sans-serif;
+}
+
+#form-container input:focus {
+  outline: 1px solid var(--very-dark-violet);
+}
+
+/* Removing arrow of input number */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Name and Number fields */
+#card-name-number label {
+  display: block;
+}
+
+#form-container span {
+  font-size: 0.9rem;
+  color: rgb(192, 110, 110);
+}
+
+#card-name-number input {
+  display: block;
+  width: calc(100% - 23px);
+}
+
+/* Exp date and cvc */
+#card-date-cvc {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#card-cvc-field {
+  width: calc(50% - 23px);
+}
+
+#card-date-field {
+  width: calc(55% - 20px);
+}
+
+#card-date-field label, #card-cvc-field label {
+  display: block;
+}
+
+#card-date-field input {
+  width: 25%;
+}
+
+#card-cvc-field input {
+  width: 100%;
+}
+
+/* Button */
+
+button {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border: 0;
+  color: white;
+  background-color: black;
+}
+
+/* Card inner elements */
+#card-front-elements {
+  position: relative;
+  top: -225px;
+  width: 400px;
+  color: white;
+  letter-spacing: 0.2rem;
+  margin: 0 auto;
+}
+
+#card-front-elements svg {
+  margin-bottom: 60px;
+}
+
+#card-number-din {
+  text-align: justify;
+  font-size: 1.8rem;
+  height: 60px;
+}
+
+#card-number-din p:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 0;
+}
+
+#card-name {
+  font-size: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#card-front-elements p {
+  margin: 0;
+}
+
+#cvc {
+  font-size: 0.85rem;
+  letter-spacing: 0.1rem;
+  color: white;
+  position: relative;
+  top: -152px;
+  left: 360px;
+}

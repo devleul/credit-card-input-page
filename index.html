@@ -7,7 +7,11 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Interactive card details form</title>
-
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
@@ -15,37 +19,72 @@
   </style>
 </head>
 <body>
-
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
-
-  000
-
-  Cardholder Name
-  e.g. Jane Appleseed
-
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
-  Confirm
-
-  <!-- Completed state start -->
-
-  Thank you!
-  We've added your card details
-  Continue
-  
+  <div id="container-lg">
+    <div id="colored-bg">
+      <picture>
+        <source media="(max-width: 650px)" srcset="./images/bg-main-mobile.png">
+        <img src="./images/bg-main-desktop.png" alt="Gradient background image">
+      </picture>
+      <div id="card-front">
+        <img src="./images/bg-card-front.png" alt="card front">
+        <div id="card-front-elements">
+          <svg width="84" height="47" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="23.478" cy="23.5" rx="23.478" ry="23.5" fill="#fff"/><path d="M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z" stroke="#fff"/></svg>
+          <div id="card-number-din">
+            <p id="number">0000 0000 0000 0000</p>
+          </div>
+          <div id="card-name">
+            <p id="name">Jane Appleseed</p>
+            <p id="issue-date">00/00</p>
+          </div>
+        </div>
+      </div>
+      <div id="card-back">
+        <img src="./images/bg-card-back.png" alt="card back">
+        <div id="cvc">
+          <p>000</p>
+        </div>
+      </div>
+    </div>
+    <main id="form-container">
+      <form action="POST">
+        <div id="card-name-number">
+          <div id="name-field">
+            <label for="cardholder-name">Cardholder Name</label>
+            <input type="text" id="cardholder-name" placeholder="e.g. Jane Apleeseed">
+            <span id="wront-name"></span>
+          </div>
+          <div id="number-field">
+            <label for="card-number">Card Number</label>
+            <input type="text" id="card-number" placeholder="e.g. 1234 5678 9123 0000">
+            <span id="wront-number"></span>
+          </div>
+        </div>
+        <div id="card-date-cvc">
+          <div id="card-date-field">
+            <label for="card-month">Exp. Date (MM/YY)</label>
+            <input type="number" maxlength="2" id="card-month" placeholder="MM">
+            <input type="number" maxlength="2" id="card-year" placeholder="YY">
+          </div>
+          <div id="card-cvc-field">
+            <label for="card-cvc">CVC</label>
+            <input type="number" maxlength="4" id="card-cvc" placeholder="e.g. 123">
+          </div>
+        </div>
+        <button type="submit">Confirm</button>
+      </form>
+    </main>
+    <!-- Completed state start -->
+    <div id="second-screen">
+      <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="40" fill="url(#a)"/><path d="M28 39.92 36.08 48l16-16" stroke="#fff" stroke-width="3"/><defs><linearGradient id="a" x1="-23.014" y1="11.507" x2="0" y2="91.507" gradientUnits="userSpaceOnUse"><stop stop-color="#6348FE"/><stop offset="1" stop-color="#610595"/></linearGradient></defs></svg>
+      <p>THANK YOU!</p>
+      <p>We've added your card details</p>
+      <button>Continue</button>
+    </div>
+  </div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+  <script src="./script.js"></script>
 </body>
 </html>
