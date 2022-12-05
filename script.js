@@ -29,18 +29,47 @@ function changeContent(event, elementForChange, std) {
   }
 }
 
+// function addSpaceCardNumber() {
+//   const numberField = document.querySelector('#card-number');
+//   numberField.addEventListener('keyup', (event) => {
+//     let length = event.target.value.length;
+//     const spaces = event.target.value.split('').filter((element) => element === ' ').length;
+//     length -= spaces;
+//     const lengthWithSpaces = length - 1;
+//     console.log(event.keyCode);
+//     console.log(length > 0);
+//     console.log(event.target.value.charAt(length - 1));
+//     if (event.target.value.charAt(length - 1) === ' ') {
+//       console.log('cheguei no space');
+//       event.target.value = event.target.value.slice(0, -1);
+//     }
+//     if (length > 0 && length % 4 === 0) {
+//       const keyID = event.keyCode;
+//       switch(keyID) {
+//         case 8:
+//           break
+//         default:
+//           event.target.value += ' ';
+//       }
+//     }
+//   });
+// }
+
 function addSpaceCardNumber() {
   const numberField = document.querySelector('#card-number');
-  numberField.addEventListener('input', (event) => {
-    let length = event.target.value.length;
-    const spaces = event.target.value.split('').filter((element) => element === ' ').length;
-    length -= spaces;
-    console.log(spaces);
-    console.log(length > 0);
-    if (length > 0 && length % 4 === 0) {
-      console.log('cheguei 2');
-      event.target.value += ' ';
+  numberField.addEventListener('keyup', (event) => {
+    let formatedNumber = '';
+    let number = event.target.value;
+    console.log(number);
+    for (let i = 0; i < number.length; i += 1) {
+      number = number.replace(' ', '');
+      if (i % 4 === 0 && i > 0) {
+        console.log(i);
+        formatedNumber = formatedNumber.concat(' ');
+      }
+      formatedNumber = formatedNumber.concat(number[i]);
     }
+    event.target.value = formatedNumber;
   });
 }
 
