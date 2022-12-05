@@ -29,42 +29,14 @@ function changeContent(event, elementForChange, std) {
   }
 }
 
-// function addSpaceCardNumber() {
-//   const numberField = document.querySelector('#card-number');
-//   numberField.addEventListener('keyup', (event) => {
-//     let length = event.target.value.length;
-//     const spaces = event.target.value.split('').filter((element) => element === ' ').length;
-//     length -= spaces;
-//     const lengthWithSpaces = length - 1;
-//     console.log(event.keyCode);
-//     console.log(length > 0);
-//     console.log(event.target.value.charAt(length - 1));
-//     if (event.target.value.charAt(length - 1) === ' ') {
-//       console.log('cheguei no space');
-//       event.target.value = event.target.value.slice(0, -1);
-//     }
-//     if (length > 0 && length % 4 === 0) {
-//       const keyID = event.keyCode;
-//       switch(keyID) {
-//         case 8:
-//           break
-//         default:
-//           event.target.value += ' ';
-//       }
-//     }
-//   });
-// }
-
 function addSpaceCardNumber() {
   const numberField = document.querySelector('#card-number');
   numberField.addEventListener('keyup', (event) => {
     let formatedNumber = '';
     let number = event.target.value;
-    console.log(number);
     for (let i = 0; i < number.length; i += 1) {
       number = number.replace(' ', '');
       if (i % 4 === 0 && i > 0) {
-        console.log(i);
         formatedNumber = formatedNumber.concat(' ');
       }
       formatedNumber = formatedNumber.concat(number[i]);
@@ -87,8 +59,26 @@ function changeNumberOnCard() {
   numberField.addEventListener('input', (event) => changeContent(event, numberOnCard, stdNumber));
 }
 
+function changeCVC() {
+  const cvcOnCard = document.querySelector('#cvc');
+  const cvcField = document.querySelector('#card-cvc');
+  const stdNumber = cvcOnCard.innerHTML
+  cvcField.addEventListener('input', (event) => changeContent(event, cvcOnCard, stdNumber));
+}
+
+function maxLengthCVC() {
+  const cvcField = document.querySelector('#card-cvc');
+  cvcField.addEventListener('input', (event) => {
+    if (event.target.value.length > 4) {
+      event.target.value = event.target.value.slice(0, 4);
+    }
+  });
+}
+
 preventScrollAllSides();
 loseFocusInput();
 changeNameOnCard();
 changeNumberOnCard();
+maxLengthCVC();
+changeCVC();
 addSpaceCardNumber();

@@ -175,7 +175,6 @@ button {
 }
 
 #card-number-din {
-  text-align: justify;
   font-size: 1.8rem;
   height: 60px;
 }
@@ -190,12 +189,16 @@ button {
 #card-name {
   font-size: 1rem;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: space-between;
 }
 
 #card-front-elements p {
   margin: 0;
+}
+
+#name {
+  width: 400px;
 }
 
 #cvc {
@@ -205,4 +208,8 @@ button {
   position: relative;
   top: -152px;
   left: 360px;
+}
+
+#cvc {
+  margin: 13.6px 0;
 }

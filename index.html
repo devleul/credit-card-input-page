@@ -41,7 +41,7 @@
       <div id="card-back">
         <img src="./images/bg-card-back.png" alt="card back">
         <div id="cvc">
-          <p>000</p>
+          000
         </div>
       </div>
     </div>
@@ -50,7 +50,7 @@
         <div id="card-name-number">
           <div id="name-field">
             <label for="cardholder-name">Cardholder Name</label>
-            <input type="text" id="cardholder-name" placeholder="e.g. Jane Apleeseed">
+            <input type="text" id="cardholder-name" placeholder="e.g. Jane Apleeseed" maxlength="24">
             <span id="wront-name"></span>
           </div>
           <div id="number-field">
@@ -67,7 +67,8 @@
           </div>
           <div id="card-cvc-field">
             <label for="card-cvc">CVC</label>
-            <input type="number" maxlength="4" id="card-cvc" placeholder="e.g. 123">
+            <input type="number" id="card-cvc" placeholder="e.g. 123">
+            <span id="wront-cvc"></span>
           </div>
         </div>
         <button type="submit">Confirm</button>
