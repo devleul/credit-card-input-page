@@ -213,3 +213,30 @@ button {
 #cvc {
   margin: 13.6px 0;
 }
+
+#wront-year {
+  flex-basis: 100%;
+}
+
+#card-year {
+  margin-right: 20px;
+}
+
+/* Second screen */
+#second-screen {
+  position: relative;
+  left: 180px;
+  top: 270px;
+  width: 400px;
+  margin: 20px 0 0 200px;
+  height: 400px;
+  text-align: center;
+}
+
+#second-screen p:nth-child(3) {
+  color: var(--dark-grayish-violet);
+}
+
+#error-msg {
+  color: var(--red-alert);
+}

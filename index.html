@@ -51,27 +51,29 @@
           <div id="name-field">
             <label for="cardholder-name">Cardholder Name</label>
             <input type="text" id="cardholder-name" placeholder="e.g. Jane Apleeseed" maxlength="24">
-            <span id="wront-name"></span>
+            <span id="wrong-name"></span>
           </div>
           <div id="number-field">
             <label for="card-number">Card Number</label>
             <input type="text" id="card-number" placeholder="e.g. 1234 5678 9123 0000" maxlength="19">
-            <span id="wront-number"></span>
+            <span id="wrong-number"></span>
           </div>
         </div>
         <div id="card-date-cvc">
           <div id="card-date-field">
             <label for="card-month">Exp. Date (MM/YY)</label>
-            <input type="number" maxlength="2" id="card-month" placeholder="MM">
-            <input type="number" maxlength="2" id="card-year" placeholder="YY">
+            <input type="number" id="card-month" placeholder="MM">
+            <input type="number" id="card-year" placeholder="YY">
+            <span id="wrong-year"></span>
           </div>
           <div id="card-cvc-field">
             <label for="card-cvc">CVC</label>
             <input type="number" id="card-cvc" placeholder="e.g. 123">
-            <span id="wront-cvc"></span>
+            <span id="wrong-cvc"></span>
           </div>
         </div>
-        <button type="submit">Confirm</button>
+        <button type="submit" id="submit">Confirm</button>
+        <span id="error-msg"></span>
       </form>
     </main>
     <!-- Completed state start -->
@@ -79,13 +81,13 @@
       <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="40" fill="url(#a)"/><path d="M28 39.92 36.08 48l16-16" stroke="#fff" stroke-width="3"/><defs><linearGradient id="a" x1="-23.014" y1="11.507" x2="0" y2="91.507" gradientUnits="userSpaceOnUse"><stop stop-color="#6348FE"/><stop offset="1" stop-color="#610595"/></linearGradient></defs></svg>
       <p>THANK YOU!</p>
       <p>We've added your card details</p>
-      <button>Continue</button>
+      <button id="btn-second-screen">Continue</button>
     </div>
   </div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
-  <script src="./script.js"></script>
+  <script type="module" src="./script.js"></script>
 </body>
 </html>
