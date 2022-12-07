@@ -75,7 +75,7 @@ form {
   width: 380px;
   margin: 0 60px 0 20%;
   height: 400px;
-  transition: 1000ms;
+  /* transition: 1000ms; */
 }
 
 #form-container input {
@@ -167,14 +167,14 @@ button {
   position: relative;
   top: 175px;
   width: 447px;
-  transition: 1000ms ease-in-out;
+  /* transition: 1000ms ease-in-out; */
 }
 
 #card-back {
   position: relative;
   margin-left: 12%;
   width: 447px;
-  transition: 1000ms ease-in-out;
+  /* transition: 1000ms ease-in-out; */
 }
 
 /* Card inner elements */
@@ -260,7 +260,7 @@ button {
     position: relative;
     margin-left: 0 !important;
     width: 447px;
-    transition: 1000ms ease-in-out;
+    /* transition: 1000ms ease-in-out; */
   }
 
   form {
@@ -305,7 +305,8 @@ button {
   }
 
   form * {
-    font-size: 1.2rem !important;
+    font-size: 1.1rem !important;
+    font-family: 'Space Grotesk', monospace, sans-serif;
   }
 
   form input {
@@ -339,7 +340,8 @@ button {
 
 @media screen and (max-width: 544px) {
   #floating-cards {
+    width: 100%;
     transform: scale(0.7);
-    margin: 0; 
+    margin: 0 auto; 
   }
 }
