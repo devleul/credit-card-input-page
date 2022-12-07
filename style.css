@@ -4,6 +4,21 @@
   --very-dark-violet: hsl(278, 68%, 11%);
   --red-alert: rgb(192, 110, 110);
 }
+  
+/* Card positioning */
+#card-front {
+  position: absolute;
+  top: 175px;
+  margin-left: 40%;
+  transition: 1000ms ease-in-out;
+}
+
+#card-back {
+  position: absolute;
+  top: 465px;
+  margin-left: 60%;
+  transition: 1000ms ease-in-out;
+}
 
 html {
   height: 900px;
@@ -34,26 +49,16 @@ body {
 #colored-bg {
   height: 100vh;
   position: relative;
-  width: 483px;
+  width: 30%;
 }
 
 #colored-bg picture {
-  object-fit: cover;
   height: 0;
 }
 
-/* Card positioning */
-
-#card-front {
-  position: absolute;
-  top: 175px;
-  left: 150px ;
-}
-
-#card-back {
-  position: absolute;
-  top: 465px;
-  left: 250px ;
+picture img {
+  width: 100%;
+  height: 100%;
 }
 
 /* Form positioning and style */
@@ -67,6 +72,7 @@ label {
   display: flex;
   justify-content: flex-start;
   width:  calc(100% - 483px);
+  width: 70%;
 }
 
 form div > div {
@@ -77,9 +83,10 @@ form {
   position: relative;
   left: 180px;
   top: 270px;
-  width: 400px;
-  margin: 0 0 0 200px;
+  width: 380px;
+  margin: 0 60px 0 25%;
   height: 400px;
+  transition: 1000ms;
 }
 
 #form-container input {
@@ -239,4 +246,80 @@ button {
 
 #error-msg {
   color: var(--red-alert);
+}
+
+/* Tablet view */
+@media screen and (max-width: 1110px and min-width: 853) {
+  #card-front {
+    margin-left: 15%;
+    scale: 80%;
+  }
+  
+  #card-back {
+    top: 420px;
+    margin-left: 15%;
+    scale: 80%;
+  }
+
+  form {
+    margin: 0 60px 0 6%;
+  }
+}
+
+/* Super big screen fix */
+@media screen and (min-width: 2100px) {
+  #card-front {
+    margin-left: 70%;
+  }
+  
+  #card-back {
+    margin-left: 80%;
+  }
+}
+
+@media screen and (max-width: 852px) {
+  html {
+    width: 100vw !important;
+  }
+
+  #container-lg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  #colored-bg {
+    width: 100%;
+    height: 250px;
+  }
+
+  #form-container {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  form {
+    position: static;
+    width: 90%;
+    margin: 100px auto;
+    font-size: 2rem;
+  }
+
+  #card-front {
+    position: absolute;
+    top: 80px;
+    margin-left: 0;
+    left: -10%;
+    z-index: 1;
+    scale: 70%;
+  }
+  
+  #card-back {
+    position: absolute;
+    top: 0;
+    margin-left: 0;
+    left: -5%;
+    scale: 70%;
+  }
 }

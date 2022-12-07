@@ -25,4 +25,4 @@ function valid_credit_card(value) {
 
 export { valid_credit_card };
 
-  // Credit to DiegoSalazar at https://gist.github.com/DiegoSalazar/4075533
+// Credit to DiegoSalazar at https://gist.github.com/DiegoSalazar/4075533
